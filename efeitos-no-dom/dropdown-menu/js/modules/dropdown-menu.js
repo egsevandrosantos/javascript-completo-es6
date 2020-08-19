@@ -1,16 +1,28 @@
-export default function initDropdownMenu() {}
+import outsideClick from "./outsideclick.js";
 
-const dropdownMenus = document.querySelectorAll("[data-dropdown]");
+export default function initDropdownMenu() {
+  const dropdownMenus = document.querySelectorAll("[data-dropdown]");
 
-dropdownMenus.forEach((item) => {
-  // item.addEventListener("touchstart", handleClick);
-  // item.addEventListener("click", handleClick);
-  ["touchstart", "click"].forEach((itemEvent) =>
-    item.addEventListener(itemEvent, handleClick)
-  );
-});
+  const handleClick = {
+    events: null,
+    element: null,
+    handleEvent(event) {
+      event.preventDefault();
+      this.element = event.currentTarget;
+      event.currentTarget.classList.add("ativo");
+      outsideClick(event.currentTarget, this.events, () => {
+        this.element.classList.remove("ativo");
+      });
+    },
+  };
 
-function handleClick(event) {
-  event.preventDefault();
-  this.classList.toggle("ativo");
+  dropdownMenus.forEach((item) => {
+    // item.addEventListener("touchstart", handleClick);
+    // item.addEventListener("click", handleClick);
+    const events = ["touchstart", "click"];
+    handleClick.events = events;
+    events.forEach((itemEvent) =>
+      item.addEventListener(itemEvent, handleClick)
+    );
+  });
 }
