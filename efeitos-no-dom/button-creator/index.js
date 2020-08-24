@@ -38,6 +38,7 @@ function handleChange(event) {
   const name = target.name;
   const value = target.value;
   handleStyle[name](value);
+  saveValues(name, value);
   showCss();
 }
 
@@ -50,3 +51,20 @@ function showCss() {
     .map((item) => `<span>${item.trim()};</span>`);
   cssText.innerHTML = arrStyleCss.join("");
 }
+
+function saveValues(name, value) {
+  localStorage[name] = value;
+}
+
+function setValues() {
+  const properties = Object.keys(localStorage);
+  const evt = document.createEvent("HTMLEvents");
+  evt.initEvent("change", true);
+  properties.forEach((key) => {
+    const element = form.elements[key];
+    element.value = localStorage[key];
+    element.dispatchEvent(evt);
+  });
+}
+
+setValues();
