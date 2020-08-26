@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap"
+      rel="stylesheet"
+    />
+    <title>Animais Fantásticos</title>
+    <script>
+      document.documentElement.className += " js";
+    </script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div data-cor="azul" data-anima-scroll="left" data-width="500"></div>
+      <nav class="menu" data-js="menu">
+        <button
+          data-js="button-menu"
+          aria-expanded="false"
+          aria-controls="menu"
+        >
+          Menu
+        </button>
+        <ul data-js="list-menu" id="menu">
+          <li><a href="#animais">Animais</a></li>
+          <li data-dropdown>
+            <a href="sobre.html">Sobre</a>
+            <ul class="dropdown-menu">
+              <li><a href="empresa.html">Empresa</a></li>
+              <li><a href="equipe.html">Equipe</a></li>
+              <li><a href="socios.html">Sócios</a></li>
+              <li><a href="investidores.html">Investidores</a></li>
+            </ul>
+          </li>
+          <li><a href="#faq">Faq</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a data-modal="abrir" href="login.html">Login &rarr;</a></li>
+        </ul>
+      </nav>
+      <section class="grid-section animais" id="animais" data-js="scroll">
+        <h1 class="titulo">Animais fantásticos</h1>
+        <ul class="animais-lista" data-js="tabmenu">
+          <li>
+            <img src="./img/imagem1.jpg" />
+          </li>
+          <li>
+            <img src="./img/imagem2.jpg" />
+          </li>
+          <li>
+            <img src="./img/imagem3.jpg" />
+          </li>
+          <li>
+            <img src="./img/imagem4.jpg" />
+          </li>
+          <li>
+            <img src="./img/imagem5.jpg" />
+          </li>
+          <li>
+            <img src="./img/imagem6.jpg" />
+          </li>
+        </ul>
+        <div class="animais-descricao" data-js="tabcontent">
+          <section data-anime="show-down">
+            <h2>Raposa</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, repellat. Error unde quis repudiandae, molestias vel
+              molestiae tempore aspernatur dolores cum ipsum ducimus quae
+              laboriosam adipisci, commodi atque facere odit, hic quidem sunt
+              recusandae aperiam odio ipsa similique numquam? Suscipit molestias
+              reiciendis similique possimus. Magnam molestias obcaecati numquam
+              tempore impedit esse asperiores labore, quae voluptate, alias
+              nihil qui, eum odio doloribus! Blanditiis iste veritatis doloribus
+              consequatur laborum non molestias impedit ad natus?
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Esquilo</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
+              iste voluptates ad mollitia, accusantium beatae quae ipsam
+              architecto blanditiis laboriosam distinctio veniam ratione culpa
+              aperiam error quaerat maxime molestias aliquam reiciendis
+              voluptatibus ex. Molestiae quia quam libero velit delectus rerum a
+              similique cupiditate explicabo voluptatibus eveniet eius animi
+              deserunt, provident incidunt obcaecati perspiciatis ad, tenetur
+              illum. Excepturi atque et natus iusto placeat laboriosam id optio
+              amet, numquam quo neque ipsa voluptatibus velit!
+            </p>
+          </section>
+          <section data-anime="show-down">
+            <h2>Urso</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat,
+              nulla minus? Omnis aliquam totam nihil dolore minus, voluptatum
+              repellat ea, ad esse veniam sed ipsam exercitationem modi itaque
+              quis harum ducimus, alias provident numquam vero impedit! Nesciunt
+              eligendi, sint rerum nostrum aut aliquid. Soluta, officia
+              explicabo architecto esse accusantium dolorum corporis a odio quae
+              similique sapiente ut odit quidem fuga ad et at voluptate neque
+              pariatur, nesciunt sit inventore unde repudiandae dicta.
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Lobo</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
+              voluptatem, quisquam nostrum officia saepe minima, quo laborum
+              odit tenetur cum quaerat aspernatur! Accusantium consequatur ipsum
+              numquam saepe, quam ipsa amet aut ducimus reiciendis ea, tenetur
+              voluptates tempore alias, veritatis rem voluptate sint cumque.
+              Harum totam sint, alias at necessitatibus vero repudiandae quo
+              reiciendis impedit consequuntur ipsam modi accusantium fuga rem,
+              cum id expedita rerum in quia aspernatur blanditiis provident ex.
+              Doloremque, quod?
+            </p>
+          </section>
+          <section data-anime="show-down">
+            <h2>Macaco</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem id
+              molestias quo? Consequuntur dolorum quam vitae earum
+              exercitationem corrupti quidem obcaecati! Deserunt, architecto!
+              Repudiandae aliquid doloremque delectus ratione tempore. Hic
+              ducimus eveniet dolore illo eos odit saepe asperiores fugiat ab
+              reprehenderit quibusdam nesciunt, mollitia natus, accusamus sequi.
+              Repudiandae sapiente eligendi, eum laboriosam aperiam neque
+              numquam aut mollitia dolore delectus doloribus temporibus
+              officiis. Porro dolorem sed neque eos dicta velit omnis
+              voluptatibus rem.
+            </p>
+          </section>
+          <section data-anime="show-right">
+            <h2>Leão</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+              nesciunt minima magnam perspiciatis ut nisi incidunt repellendus
+              nostrum, hic id omnis ipsa culpa. Dolores dolorum, amet commodi,
+              veritatis quo quidem dolorem debitis ex nisi alias distinctio
+              reprehenderit est cumque ipsa nam quae cum exercitationem
+              perferendis vitae neque ad architecto quas doloremque! Facilis
+              obcaecati eveniet veritatis accusantium placeat blanditiis quasi
+              aperiam non maxime quidem. Praesentium accusamus recusandae eius
+              voluptatem vero expedita quis fugit!
+            </p>
+          </section>
+        </div>
+      </section>
+      <section class="grid-section faq" id="faq" data-js="scroll">
+        <h1 class="titulo">FAQ</h1>
+        <dl class="faq-lista" data-js="accordion">
+          <dt>Qual a idade dos animais?</dt>
+          <dd>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus id
+            fugiat dolorem, consequuntur doloremque accusamus alias praesentium
+            odio sunt? Placeat numquam optio, earum aut vero perspiciatis
+            necessitatibus aliquam consequatur voluptatibus voluptas deleniti
+            eveniet odit iusto vel!
+          </dd>
+          <dt>Eles são fantásticos?</dt>
+          <dd>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+            cum magni maiores nemo itaque nobis blanditiis fuga alias est? Nulla
+            ab necessitatibus totam tempora beatae unde impedit facilis culpa
+            tempore. Consectetur excepturi minus quibusdam amet exercitationem.
+          </dd>
+          <dt>Qual a diferença?</dt>
+          <dd>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+            similique omnis. Corporis laboriosam aliquam repellendus, ipsum
+            accusantium rerum. Minus cupiditate maxime explicabo, necessitatibus
+            laborum delectus! Mollitia, alias illum nesciunt id quos quas
+            explicabo soluta consequuntur sed.
+          </dd>
+          <dt>Como proteger?</dt>
+          <dd>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
+            cum animi repellendus sed voluptate ratione, distinctio dolorum
+            quia. Ducimus beatae et dolorem aperiam voluptate. Praesentium omnis
+            at quo atque culpa aliquid, nisi placeat. Vitae, inventore autem!
+          </dd>
+        </dl>
+      </section>
+      <section class="grid-section numeros" data-js="scroll">
+        <h1 class="titulo">Números</h1>
+        <div class="numeros-grid"></div>
+      </section>
+      <section class="grid-section contato" data-js="scroll" id="contato">
+        <h1 class="titulo">Contato</h1>
+        <div
+          class="mapa"
+          data-tooltip
+          aria-label="Endereço próximo ao estacionamento"
+        >
+          <img src="./img/mapa.png" />
+        </div>
+        <ul class="dados">
+          <li>contato@origamid.com</li>
+          <li>+55 (21) 99999-9999</li>
+          <li>Rua do Conde, nº 21</li>
+          <li>Rio de Janeiro - RJ</li>
+          <li data-semana="1,2,3,4,5" data-horario="8,18">
+            Seg à Sex das 8 às 18
+          </li>
+        </ul>
+      </section>
+      <footer class="copy">
+        <p>Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+    <section class="modal-container" data-modal="container">
+      <div class="modal">
+        <button data-modal="fechar" class="fechar">X</button>
+        <form>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="password" />
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
