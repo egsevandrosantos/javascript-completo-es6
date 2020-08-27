@@ -317,3 +317,10 @@ body {
 [data-semana].fechado::after {
   background: red;
 }
+
+.btc-preco {
+  background: #03e803;
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+  border-radius: 2px;
+}

@@ -2,14 +2,18 @@ import initAnimaNumeros from "./anima-numeros.js";
 
 export default function initFetchAnimais() {
   async function fetchAnimais(url) {
-    const animaisFetch = await fetch(url);
-    const animaisJson = await animaisFetch.json();
-    const numerosGrid = document.querySelector(".numeros-grid");
-    animaisJson.forEach((item) => {
-      const div = createAnimal(item);
-      numerosGrid.appendChild(div);
-    });
-    initAnimaNumeros();
+    try {
+      const animaisFetch = await fetch(url);
+      const animaisJson = await animaisFetch.json();
+      const numerosGrid = document.querySelector(".numeros-grid");
+      animaisJson.forEach((item) => {
+        const div = createAnimal(item);
+        numerosGrid.appendChild(div);
+      });
+      initAnimaNumeros();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   function createAnimal(animal) {
