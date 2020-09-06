@@ -1,3 +1,5 @@
+// import $ from "jquery";
+// import _ from "lodash";
 import initScrollSuave from "./modules/scroll-suave.js";
 import initScrollAnimacao from "./modules/scroll-animacao.js";
 import initAccordionList from "./modules/accordion.js";
@@ -21,3 +23,9 @@ initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
+
+// $("nav").hide();
+// const nav = $("nav");
+// console.log(nav);
+// const diff = _.difference(["Banana", "Uva"], ["Banana", "Morango"]);
+// console.log(diff);
