@@ -4,16 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production ./js/index.js --output ./dist/main.js",
+    "dev": "webpack --mode development ./js/index.js --output ./dist/main.js --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.8.1",
     "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0"
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "eslint-config-prettier": "^6.11.0"
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.20"
   }
 }
