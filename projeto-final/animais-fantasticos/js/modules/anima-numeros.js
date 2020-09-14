@@ -1,8 +1,16 @@
-export default function initAnimaNumeros() {
-  const numeros = document.querySelectorAll("[data-numero]");
+export default class AnimaNumeros {
+  constructor(numeros, observeTarget) {
+    this.handleMutation = this.handleMutation.bind(this);
+    this.numeros = document.querySelectorAll(numeros);
+    this.observeTarget = document.querySelector(observeTarget);
+    if (this.numeros && this.observeTarget) {
+      this.observer = new MutationObserver(this.handleMutation);
+      this.observer.observe(this.observeTarget, { attributes: true });
+    }
+  }
 
-  function animaNumeros() {
-    numeros.forEach((item) => {
+  animaNumeros() {
+    this.numeros.forEach((item) => {
       const total = +item.innerText;
       const incremento = Math.floor(total / 100);
       let start = 0;
@@ -17,15 +25,10 @@ export default function initAnimaNumeros() {
     });
   }
 
-  const observeTarget = document.querySelector(".numeros");
-  let observer;
-
-  const handleMutation = (mutation) => {
+  handleMutation(mutation) {
     if (mutation[0].target.classList.contains("ativo")) {
-      observer.disconnect();
-      animaNumeros();
+      this.observer.disconnect();
+      this.animaNumeros();
     }
-  };
-  observer = new MutationObserver(handleMutation);
-  observer.observe(observeTarget, { attributes: true });
+  }
 }
