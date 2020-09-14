@@ -1,20 +1,32 @@
-export default function initAnimacaoScroll() {
-  const sections = document.querySelectorAll('[data-js="scroll"]');
-  const window60Perc = window.innerHeight * 0.6;
+export default class AnimacaoScroll {
+  constructor(sections) {
+    this.checkDistance = this.checkDistance.bind(this);
+    this.sections = document.querySelectorAll(sections);
+    this.window60Perc = window.innerHeight * 0.6;
+    if (this.sections.length) {
+      this.getDistance();
+      this.checkDistance();
+      window.addEventListener("scroll", this.checkDistance);
+    }
+  }
 
-  function animaScroll() {
-    sections.forEach((item) => {
-      const sectionTop = item.getBoundingClientRect().top - window60Perc;
-      if (sectionTop <= 0) {
-        item.classList.add("ativo");
-      } else if (item.classList.contains("ativo")) {
-        item.classList.remove("ativo");
-      }
+  getDistance() {
+    this.distance = [...this.sections].map((item) => {
+      const { offsetTop } = item;
+      return {
+        element: item,
+        offsetTop,
+      };
     });
   }
 
-  if (sections.length) {
-    animaScroll();
-    window.addEventListener("scroll", animaScroll);
+  checkDistance() {
+    this.distance.forEach((item) => {
+      if (window.pageYOffset > item.element.offsetTop - this.window60Perc) {
+        item.element.classList.add("ativo");
+      } else if (item.element.classList.contains("ativo")) {
+        item.element.classList.remove("ativo");
+      }
+    });
   }
 }

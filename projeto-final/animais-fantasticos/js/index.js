@@ -1,7 +1,7 @@
 // import $ from "jquery";
 // import _ from "lodash";
 import ScrollSuave from "./modules/scroll-suave.js";
-import initScrollAnimacao from "./modules/scroll-animacao.js";
+import ScrollAnimacao from "./modules/scroll-animacao.js";
 import AccordionList from "./modules/accordion.js";
 import TabNav from "./modules/tabnav.js";
 import Modal from "./modules/modal.js";
@@ -13,7 +13,7 @@ import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 (() => new ScrollSuave("a[href^='#']"))();
-initScrollAnimacao();
+(() => new ScrollAnimacao('[data-js="scroll"]'))();
 (() => new AccordionList('[data-js="accordion"] dt'))();
 (() =>
   new TabNav('[data-js="tabmenu"] li', '[data-js="tabcontent"] section'))();
