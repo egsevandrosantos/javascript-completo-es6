@@ -5,7 +5,7 @@ import initScrollAnimacao from "./modules/scroll-animacao.js";
 import AccordionList from "./modules/accordion.js";
 import TabNav from "./modules/tabnav.js";
 import Modal from "./modules/modal.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import initDropdownMenu from "./modules/dropdown-menu.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
@@ -23,7 +23,7 @@ initScrollAnimacao();
     '[data-modal="fechar"]',
     '[data-modal="container"]'
   ))();
-initTooltip();
+(() => new Tooltip("[data-tooltip]"))();
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
