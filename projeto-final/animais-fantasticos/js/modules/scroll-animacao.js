@@ -1,6 +1,8 @@
+import debounce from "./debounce.js";
+
 export default class AnimacaoScroll {
   constructor(sections) {
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(50, this.checkDistance.bind(this));
     this.sections = document.querySelectorAll(sections);
     this.window60Perc = window.innerHeight * 0.6;
     if (this.sections.length) {

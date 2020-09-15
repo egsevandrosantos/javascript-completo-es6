@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce</title>
+    <style>
+      body {
+        height: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function debounce(delay, callback, ...callbackArgs) {
+        let timer;
+        return () => {
+          if (timer) {
+            clearTimeout(timer);
+          }
+          timer = setTimeout(() => {
+            timer = null;
+            callback(...callbackArgs);
+          }, delay);
+        };
+      }
+
+      function onScroll() {
+        console.log("teste");
+      }
+
+      const debouncedScroll = this.debounce(200, this.onScroll);
+
+      window.addEventListener("scroll", debouncedScroll);
+    </script>
+  </body>
+</html>
