@@ -8,7 +8,7 @@ import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
-import initFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
@@ -26,7 +26,7 @@ import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 (() => new Tooltip("[data-tooltip]"))();
 (() => new DropdownMenu("[data-dropdown]"))();
 (() => new MenuMobile('[data-js="button-menu"]', "#menu"))();
-initFuncionamento();
+(() => new Funcionamento("[data-semana]"))();
 initFetchAnimais();
 initFetchBitcoin();
 
