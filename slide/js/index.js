@@ -1,3 +1,4 @@
 import Slide from "./slide.js";
 
-new Slide(".slide", ".wrapper");
+const slide = new Slide(".slide", ".wrapper");
+slide.changeSlide(0);
