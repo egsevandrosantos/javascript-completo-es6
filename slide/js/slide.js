@@ -7,6 +7,10 @@ export default class Slide {
     this.init();
   }
 
+  transition(active) {
+    this.slide.style.transition = active ? 'transform .3s' : '';
+  }
+
   bindFunctionsCallbacks() {
     this.onStart = this.onStart.bind(this);
     this.onMove = this.onMove.bind(this);
@@ -43,12 +47,25 @@ export default class Slide {
       moveType = "touchmove";
     }
     this.wrapper.addEventListener(moveType, this.onMove);
+    this.transition(false);
   }
 
   onEnd(event) {
+    this.transition(true);
     const moveType = event.type === "mouseup" ? "mousemove" : "touchmove";
     this.wrapper.removeEventListener(moveType, this.onMove);
     this.dist.finalPosition = this.dist.movePosition;
+    this.changeSlideOnEnd();
+  }
+
+  changeSlideOnEnd() {
+    if (this.dist.movement > 120 && this.index.next !== undefined) {
+      this.activeNextSlide();
+    } else if (this.dist.movement < -120 && this.index.previous !== undefined) {
+      this.activePreviousSlide();
+    } else {
+      this.changeSlide(this.index.active);
+    }
   }
 
   addSlideEvents() {
@@ -80,6 +97,18 @@ export default class Slide {
       active: index,
       next: index + 1 < slideArrayLength ? index + 1 : undefined,
     };
+  }
+
+  activePreviousSlide() {
+    if (this.index.previous !== undefined) {
+      this.changeSlide(this.index.previous);
+    }
+  }
+
+  activeNextSlide() {
+    if (this.index.next !== undefined) {
+      this.changeSlide(this.index.next);
+    }
   }
 
   changeSlide(index) {
