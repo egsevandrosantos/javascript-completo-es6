@@ -19,6 +19,8 @@ export default class Slide {
     this.onMove = this.onMove.bind(this);
     this.onEnd = this.onEnd.bind(this);
     this.onResize = debounce(this.onResize.bind(this), 200);
+    this.activePreviousSlide = this.activePreviousSlide.bind(this);
+    this.activeNextSlide = this.activeNextSlide.bind(this);
   }
 
   moveSlide(distX) {
