@@ -11,6 +11,7 @@ import MenuMobile from "./modules/menu-mobile.js";
 import Funcionamento from "./modules/funcionamento.js";
 import initFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import SlideNav from "./modules/slide-nav.js";
 
 (() => new ScrollSuave("a[href^='#']"))();
 (() => new ScrollAnimacao('[data-js="scroll"]'))();
@@ -35,3 +36,7 @@ initFetchBitcoin();
 // console.log(nav);
 // const diff = _.difference(["Banana", "Uva"], ["Banana", "Morango"]);
 // console.log(diff);
+
+const slideNav = new SlideNav(".slide", ".wrapper");
+slideNav.changeSlide(0);
+slideNav.addControl(".custom-controls");
